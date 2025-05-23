@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "expenseType": 0,
+    "date": "2024-05-21",
+    "amount":  20.00,
+    "category":  "Transportation",
+    "account": "Cash",
+    "note": "Train fare"
+  },
+  {
+    "id": 2,
+    "expenseType": 0,
+    "date": "2024-05-22",
+    "amount":  20.00,
+    "category":  "Transportation",
+    "account": "Cash",
+    "note": "Train fare"
+  }
+]
