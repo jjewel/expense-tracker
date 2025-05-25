@@ -4,6 +4,7 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jjewel.expense_tracker.model.Expense;
 import jakarta.annotation.PostConstruct;
+import lombok.Getter;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -14,6 +15,7 @@ import java.util.List;
 @Component
 public class ExpenseDataLoader {
 
+    @Getter
     private static List<Expense> expenseList = new ArrayList<>();
 
     @PostConstruct
@@ -22,13 +24,10 @@ public class ExpenseDataLoader {
         InputStream stream = getClass().getResourceAsStream("/expenses.json");
 
         try {
-            expenseList = mapper.readValue(stream, new TypeReference<List<Expense>>() {});
+            expenseList = mapper.readValue(stream, new TypeReference<>() {});
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
-    public static List<Expense> getExpenseList() {
-        return expenseList;
-    }
 }
