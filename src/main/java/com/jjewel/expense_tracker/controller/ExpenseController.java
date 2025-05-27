@@ -6,12 +6,10 @@ import com.jjewel.expense_tracker.util.ExpenseDataLoader;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class ExpenseController {
@@ -20,6 +18,11 @@ public class ExpenseController {
 
     public ExpenseController(ExpenseService expenseService) {
         this.expenseService = expenseService;
+    }
+
+    @GetMapping("/expenses")
+    public ResponseEntity<List<Expense>> getExpenses() {
+        return ResponseEntity.ok(expenseService.getExpenses());
     }
 
     @GetMapping("/expenses/categories")
@@ -39,9 +42,7 @@ public class ExpenseController {
     }
 
     /**
-     * @param category
      * @param month example: month?month=11
-     * @return
      */
     @GetMapping("/expenses/category/{category}/month")
     public ResponseEntity<List<Expense>> getExpensesByCategoryAndMonth(
@@ -49,6 +50,31 @@ public class ExpenseController {
             @RequestParam String month
     ) {
         return ResponseEntity.ok(expenseService.getExpenseByCategoryAndMonth(category, month));
+    }
+
+    @GetMapping("/expenses/{id}")
+    public ResponseEntity<Optional<Expense>> getExpenseById(@PathVariable Long id) {
+        return ResponseEntity.ok(expenseService.getExpenseById(id));
+    }
+
+    @PostMapping("/expenses")
+    public ResponseEntity<Expense> addExpense(@RequestBody Expense expense) {
+        Expense newExpense = expenseService.addExpense(expense);
+        return new ResponseEntity<>(newExpense, HttpStatus.CREATED);
+    }
+
+    @PutMapping("/expenses/{id}")
+    public ResponseEntity<Expense> updateExpense(
+            @PathVariable Long id, @RequestBody Expense expense
+    ) {
+        expense.setId(id);
+        boolean isUpdated = expenseService.updateExpense(expense);
+
+        if (isUpdated) {
+            return new ResponseEntity<>(expense, HttpStatus.OK);
+        }
+
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
 
 }

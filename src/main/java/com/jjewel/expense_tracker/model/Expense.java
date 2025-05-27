@@ -7,7 +7,7 @@ import lombok.Data;
 public class Expense {
 
     @JsonProperty("id")
-    private int id;
+    private Long id;
 
     @JsonProperty("expenseType")
     private boolean expenseType;
