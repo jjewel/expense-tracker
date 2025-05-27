@@ -28,12 +28,13 @@ extra["snippetsDir"] = file("build/generated-snippets")
 extra["sentryVersion"] = "8.12.0"
 
 dependencies {
-	implementation("org.springframework.boot:spring-boot-starter-actuator")
-	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	implementation("org.springframework.boot:spring-boot-starter-data-redis")
-//	implementation("org.springframework.boot:spring-boot-starter-security")
 	implementation("org.springframework.boot:spring-boot-starter-web")
-	implementation("io.sentry:sentry-spring-boot-starter-jakarta")
+	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+
+//	implementation("org.springframework.boot:spring-boot-starter-data-redis")
+//	implementation("io.sentry:sentry-spring-boot-starter-jakarta")
+//	implementation("org.springframework.boot:spring-boot-starter-actuator")
+//	implementation("org.springframework.boot:spring-boot-starter-security")
 
 	// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
 	implementation("com.fasterxml.jackson.core:jackson-core:2.19.0")
