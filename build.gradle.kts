@@ -30,6 +30,7 @@ extra["sentryVersion"] = "8.12.0"
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+	runtimeOnly("com.h2database:h2")
 
 //	implementation("org.springframework.boot:spring-boot-starter-data-redis")
 //	implementation("io.sentry:sentry-spring-boot-starter-jakarta")
@@ -39,7 +40,6 @@ dependencies {
 	// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
 	implementation("com.fasterxml.jackson.core:jackson-core:2.19.0")
 
-	runtimeOnly("com.h2database:h2")
 
 	compileOnly("org.projectlombok:lombok")
 	annotationProcessor("org.projectlombok:lombok")
