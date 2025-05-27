@@ -32,6 +32,9 @@ dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 	runtimeOnly("com.h2database:h2")
 
+	// https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui
+	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.8")
+
 //	implementation("org.springframework.boot:spring-boot-starter-data-redis")
 //	implementation("io.sentry:sentry-spring-boot-starter-jakarta")
 //	implementation("org.springframework.boot:spring-boot-starter-actuator")

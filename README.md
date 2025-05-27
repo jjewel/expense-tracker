@@ -1,5 +1,8 @@
 # Local Links
 
+* [Swagger API Documentation](http://localhost:8080/swagger-ui/index.html)
+* [Raw Open API Documentation](http://localhost:8080/v3/api-docs)
+* [View all expenses](http://localhost:8080/expenses)
 * [H2 Console](http://localhost:8080/h2-console)
 
 
