@@ -2,11 +2,7 @@ package com.jjewel.expense_tracker.controller;
 
 import com.jjewel.expense_tracker.model.Expense;
 import com.jjewel.expense_tracker.service.ExpenseService;
-import com.jjewel.expense_tracker.util.ExpenseDataLoader;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,8 +14,7 @@ import java.util.Optional;
 public class ExpenseController {
     private final ExpenseService expenseService;
 
-    @Autowired
-    public ExpenseController(@Qualifier("h2") ExpenseService expenseService) {
+    public ExpenseController(ExpenseService expenseService) {
         this.expenseService = expenseService;
     }
 

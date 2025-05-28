@@ -30,7 +30,15 @@ extra["sentryVersion"] = "8.12.0"
 dependencies {
 	implementation("org.springframework.boot:spring-boot-starter-web")
 	implementation("org.springframework.boot:spring-boot-starter-data-jpa")
-	runtimeOnly("com.h2database:h2")
+
+	// https://mvnrepository.com/artifact/org.postgresql/postgresql
+	implementation("org.postgresql:postgresql:42.7.5")
+
+	// https://mvnrepository.com/artifact/com.h2database/h2
+	runtimeOnly("com.h2database:h2:2.3.232")
+
+	// https://mvnrepository.com/artifact/org.flywaydb/flyway-core
+//	implementation("org.flywaydb:flyway-core:11.8.2")
 
 	// https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.8")
