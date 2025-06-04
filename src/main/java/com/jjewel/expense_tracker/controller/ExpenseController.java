@@ -2,6 +2,8 @@ package com.jjewel.expense_tracker.controller;
 
 import com.jjewel.expense_tracker.model.Expense;
 import com.jjewel.expense_tracker.service.ExpenseService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,11 +12,12 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/expenses")
+@RequestMapping("/secured/expenses")
 public class ExpenseController {
+
     private final ExpenseService expenseService;
 
-    public ExpenseController(ExpenseService expenseService) {
+    public ExpenseController(@Qualifier("expenseServiceImplDb") ExpenseService expenseService) {
         this.expenseService = expenseService;
     }
 

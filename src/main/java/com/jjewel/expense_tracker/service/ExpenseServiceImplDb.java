@@ -2,14 +2,14 @@ package com.jjewel.expense_tracker.service;
 
 import com.jjewel.expense_tracker.model.Expense;
 import com.jjewel.expense_tracker.repository.ExpenseRepository;
-import org.springframework.context.annotation.Profile;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Service
-@Profile("db")
+@Service("expenseServiceImplDb")
+@Primary
 public class ExpenseServiceImplDb implements ExpenseService{
 
     private final ExpenseRepository expenseRepository;

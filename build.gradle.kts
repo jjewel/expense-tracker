@@ -43,10 +43,11 @@ dependencies {
 	// https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-starter-webmvc-ui
 	implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.8.8")
 
+	implementation("org.springframework.boot:spring-boot-starter-security")
+
 //	implementation("org.springframework.boot:spring-boot-starter-data-redis")
 //	implementation("io.sentry:sentry-spring-boot-starter-jakarta")
 //	implementation("org.springframework.boot:spring-boot-starter-actuator")
-//	implementation("org.springframework.boot:spring-boot-starter-security")
 
 	// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core
 	implementation("com.fasterxml.jackson.core:jackson-core:2.19.0")

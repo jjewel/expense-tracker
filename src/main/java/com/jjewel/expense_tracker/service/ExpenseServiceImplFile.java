@@ -9,8 +9,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicLong;
 
-@Service
-@Profile("json")
+@Service("expenseServiceImplFile")
 public class ExpenseServiceImplFile implements ExpenseService{
 
     private static final AtomicLong idCounter = new AtomicLong();
